@@ -16,5 +16,5 @@
 </p>
 
 <%= link_to 'Edit', edit_director_film_path(@film) %> |
-<%= link_to 'delete', director_film_path(@film), method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', director_path %>
+<%= link_to 'Delete', director_film_path(@film), method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', director_path(@director) %>
