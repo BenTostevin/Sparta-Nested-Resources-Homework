@@ -10,6 +10,7 @@ class DirectorsController < ApplicationController
   # GET /directors/1
   # GET /directors/1.json
   def show
+    @director = Director.find(params[:id])
     @films = Film.all
   end
 
