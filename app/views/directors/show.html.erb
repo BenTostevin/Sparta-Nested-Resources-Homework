@@ -21,12 +21,14 @@
   </thead>
   <tbody>
     <% @films.each do |film| %>
-      <tr>
-        <td><%= film.title %></td>
-        <td><%= film.released %></td>
-        <td><%= link_to 'See more', director_film_path(@director, film) %></td>
-        <td><%= link_to 'Edit', edit_director_film_path(@director, film) %></td><br>
-      </tr>
+      <% if(film.director.id == @director.id) %>
+        <tr>
+          <td><%= film.title %></td>
+          <td><%= film.released %></td>
+          <td><%= link_to 'See more', director_film_path(@director, film) %></td>
+          <td><%= link_to 'Edit', edit_director_film_path(@director, film) %></td><br>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
