@@ -10,7 +10,7 @@ class FilmsController < ApplicationController
   # GET /films/1
   # GET /films/1.json
   def show
-    
+    @director = Director.find(params[:director_id])
   end
 
   # GET /films/new
@@ -29,6 +29,7 @@ class FilmsController < ApplicationController
   def create
     @film = Film.new(film_params)
     @director = Director.find(params[:director_id])
+    @film.director = @director
     respond_to do |format|
       if @film.save
         format.html { redirect_to director_path(@director), notice: 'Film was successfully created.' }
