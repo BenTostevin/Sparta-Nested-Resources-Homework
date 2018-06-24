@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @director.full_name %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @director.dob %>
+</p>
+
+<%= link_to 'New Film', new_director_film_path(@director) %> |
+<%= link_to 'Edit', edit_director_path(@director) %> |
+<%= link_to 'Back', directors_path %>
+
+<table>
+  <thead>
+    <th>Title</th>
+    <th>Release Year</th>
+  </thead>
+  <tbody>
+    <% @films.each do |film| %>
+    <tr>
+      <td><%= film.title %></td>
+      <td><%= film.released %></td>
+      <td><%= link_to 'see more', director_film_path(@director, film) %></td>
+      <td><%= link_to 'edit', edit_director_film_path(@director, film) %></td><br>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

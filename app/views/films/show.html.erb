@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @film.title %>
+</p>
+
+<p>
+  <strong>Released:</strong>
+  <%= @film.released %>
+</p>
+
+<p>
+  <strong>Director:</strong>
+  <%= @film.director_id %>
+</p>
+
+<%= link_to 'Edit', edit_director_film_path(@film) %> |
+<%= link_to 'delete', director_film_path(@film), method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', director_path %>
